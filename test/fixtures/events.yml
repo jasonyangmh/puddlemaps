@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  like: 1
+  dislike: 1
+  image_url: MyText
+  deleted_at: 2024-07-28 01:27:42
+
+two:
+  title: MyString
+  like: 1
+  dislike: 1
+  image_url: MyText
+  deleted_at: 2024-07-28 01:27:42

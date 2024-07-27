@@ -17,13 +17,13 @@
     }).addTo(map);
 
     var puddleIcon = L.icon({
-    iconUrl: '<%=image_tag "puddle.png"%>',
+    iconUrl: '<%= asset_path("puddle.png") %>',
     iconSize: [64, 64],
     });
 
-    var marker = L.marker([-6.29247, 106.786156], { icon: puddleIcon }).addTo(map);
-
-    marker.bindPopup(
-    '<center><img src="https://www.w3schools.com/html/img_chania.jpg" width="200" height="200"><br><b>Hello world!</b><br>I am a popup.</center>'
-    );
+    <% @events.each do |event| %>
+        L.marker([<%= event.latitude %>, <%= event.longitude %>], { icon: puddleIcon }).addTo(map).bindPopup(
+        '<center><img src="<%= event.image_url %>" width="200" height="200"><br><b><%= event.title %></b></center>'
+        );
+    <% end %>
 </script>
