@@ -11,6 +11,9 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.1].define(version: 2024_07_27_172742) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "events", force: :cascade do |t|
     t.string "title"
     t.float "latitude"
@@ -18,7 +21,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_27_172742) do
     t.integer "like"
     t.integer "dislike"
     t.text "image_url"
-    t.datetime "deleted_at"
+    t.datetime "deleted_at", precision: nil
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
