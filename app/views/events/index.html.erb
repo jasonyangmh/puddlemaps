@@ -26,4 +26,20 @@
         '<center><img src="<%= event.image_url %>" width="200" height="200"><br><b><%= event.title %></b></center>'
         );
     <% end %>
+
+    map.on("click", function(e) {
+        L.marker(e.latlng, { icon: puddleIcon })
+            .addTo(map)
+            .bindPopup(
+                `<center>
+                    <form action="/events" method="post">
+                        <input type="text" name="event[title]" id="event_title"><br>
+                        <input type="hidden" id="event_latitude" name="event[latitude]" type="number" value=` + e.latlng.lat + ` />
+                        <input type="hidden" id="event_longitude" name="event[longitude]" type="number" value=` + e.latlng.lng + ` />
+                        <input type="submit" name="commit" value="Save" data-disable-with="Save">
+                    </form>
+                </center>`
+            )
+            .openPopup();
+    });
 </script>
