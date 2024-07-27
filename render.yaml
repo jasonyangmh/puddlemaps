@@ -1,12 +1,12 @@
 databases:
-  - name: mysite
-    databaseName: mysite
+  - name: puddlemaps
+    databaseName: puddlemaps
     user: mysite
     plan: free
 
 services:
   - type: web
-    name: mysite
+    name: puddlemaps
     runtime: ruby
     plan: free
     buildCommand: "./bin/render-build.sh"
