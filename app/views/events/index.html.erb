@@ -34,6 +34,7 @@
                 `<center>
                     <form action="/events" method="post">
                         <input type="text" name="event[title]" id="event_title"><br>
+                        <input type="hidden" id="event_image_url" name="event[image_url]" type="text" value="https://dictionary.cambridge.org/images/thumb/puddle_noun_002_29508.jpg?version=6.0.27" />
                         <input type="hidden" id="event_latitude" name="event[latitude]" type="number" value=` + e.latlng.lat + ` />
                         <input type="hidden" id="event_longitude" name="event[longitude]" type="number" value=` + e.latlng.lng + ` />
                         <input type="submit" name="commit" value="Save" data-disable-with="Save">
